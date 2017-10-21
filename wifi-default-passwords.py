@@ -53,7 +53,7 @@ def main():
         pw = pldt_home_fibr1(name)
     elif name.startswith('PLDTHOMEFIBR'):
         pw = pldt_home_fibr2(name)
-    if name.startswith('PLDTHOMEDSL'):
+    elif name.startswith('PLDTHOMEDSL'):
         pw = pldt_home_dsl(name)
 
     print("pass: ", pw)
