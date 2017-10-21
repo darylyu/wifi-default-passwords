@@ -48,7 +48,7 @@ def pldt_home_fibr2(name):
 
 def main():
     name = sys.argv[1]
-    print(name)
+    print("name: ", name)
     if name.startswith('PLDTHOMEFIBR_'):
         pw = pldt_home_fibr1(name)
     elif name.startswith('PLDTHOMEFIBR'):
@@ -56,7 +56,7 @@ def main():
     if name.startswith('PLDTHOMEDSL'):
         pw = pldt_home_dsl(name)
 
-    print(pw)
+    print("pass: ", pw)
 
 
 if __name__ == '__main__':
