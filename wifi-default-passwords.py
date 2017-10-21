@@ -1,8 +1,42 @@
 #!/usr/bin/env python3
+import sys
+
+PLDT_HEX_TABLE = {
+    '0': 'f',
+    '1': 'e',
+    '2': 'd',
+    '3': 'c',
+    '4': 'b',
+    '5': 'a',
+    '6': '9',
+    '7': '8',
+    '8': '7',
+    '9': '6',
+    'a': '5',
+    'b': '4',
+    'c': '3',
+    'd': '2',
+    'e': '1',
+    'f': '0',
+}
+
+
+def pldt_home_fibr1(name):
+    ssid = name.split('PLDTHOMEFIBR_')[1]
+    pw = "wlan"
+
+    for char in ssid:
+        pw += PLDT_HEX_TABLE[char]
+    return pw
 
 
 def main():
-    pass
+    name = sys.argv[1]
+    print(name)
+    if name.startswith('PLDTHOMEFIBR_'):
+        pw = pldt_home_fibr1(name)
+
+    print(pw)
 
 
 if __name__ == '__main__':
