@@ -21,6 +21,13 @@ PLDT_HEX_TABLE = {
 }
 
 
+def pldt_home_dsl(name):
+    ssid = name.split('PLDTHOMEDSL')[1]
+    pw = "PLDTHOMEDSL"
+    pw += str(int(ssid) * 3)
+    return pw
+
+
 def pldt_home_fibr1(name):
     ssid = name.split('PLDTHOMEFIBR_')[1]
     pw = "wlan"
@@ -46,6 +53,8 @@ def main():
         pw = pldt_home_fibr1(name)
     elif name.startswith('PLDTHOMEFIBR'):
         pw = pldt_home_fibr2(name)
+    if name.startswith('PLDTHOMEDSL'):
+        pw = pldt_home_dsl(name)
 
     print(pw)
 
