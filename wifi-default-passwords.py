@@ -30,11 +30,22 @@ def pldt_home_fibr1(name):
     return pw
 
 
+def pldt_home_fibr2(name):
+    ssid = name.split('PLDTHOMEFIBR')[1]
+    pw = "PLDTWIFI"
+
+    for char in ssid:
+        pw += PLDT_HEX_TABLE[char]
+    return pw
+
+
 def main():
     name = sys.argv[1]
     print(name)
     if name.startswith('PLDTHOMEFIBR_'):
         pw = pldt_home_fibr1(name)
+    elif name.startswith('PLDTHOMEFIBR'):
+        pw = pldt_home_fibr2(name)
 
     print(pw)
 
